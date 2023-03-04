@@ -5,15 +5,15 @@ namespace Collections
 {
     public class Collection<T>
     {
-        private const int InitialCapacity = 16;
+        private const int InitialCapacity = 16; //пъвоначалният капацитет е 16
         private T[] items;
         public int Capacity => this.items.Length;
         public int Count { get; private set; }
 
-        public Collection(params T[] items)
+        public Collection(params T[] items) // когато създаваме нова колекция
         {
-            int capacity = Math.Max(2 * items.Length, InitialCapacity);
-            this.items = new T[capacity];
+            int capacity = Math.Max(2 * items.Length, InitialCapacity); // капацитета е = на вземи това което е 2 пъти по големината на items  два пъти големината и първоначалният капацитет
+            this.items = new T[capacity];                               
             for (int i = 0; i < items.Length; i++)
                 this.items[i] = items[i];
             this.Count = items.Length;
